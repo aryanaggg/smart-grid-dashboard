@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "seed": "node db_init.js"
+    "seed": "node db_init.js",
+    "simulate": "node simulator.js",
+    "render-start": "npm run simulate & npm start"
   },
   "dependencies": {
     "express": "^4.18.2",
