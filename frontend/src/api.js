@@ -1,5 +1,9 @@
 import axios from 'axios';
-const BASE = process.env.REACT_APP_API || 'http://localhost:4000';
+const BASE =
+  process.env.REACT_APP_API ||
+  (window.location.hostname === "localhost"
+    ? "http://localhost:4000"
+    : "https://smart-grid-dashboard.onrender.com");
 
 export const api = axios.create({
   baseURL: BASE,
