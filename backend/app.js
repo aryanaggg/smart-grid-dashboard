@@ -5,7 +5,16 @@ const bodyParser = require('body-parser');
 
 const db = new sqlite3.Database('./db.sqlite');
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",                         // local frontend
+    "https://smart-grid-dashboard-frontend.onrender.com"  // your Render frontend URL (replace with yours)
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+
 app.use(bodyParser.json());
 
 function toRows(rows) {
