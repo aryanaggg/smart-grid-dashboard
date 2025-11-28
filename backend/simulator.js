@@ -88,7 +88,7 @@ function tick() {
         maybeInsertAlert(p.plant, p.output, consumption);
         remaining--;
         if (remaining === 0) {
-          console.log(`[${new Date().toLocaleTimeString()}] Inserted metrics. Total gen: ${Math.round(outputs.reduce((s,o)=>s+o.output,0))} kW, consumption: ${Math.round(consumption)}`);
+          // console.log(`[${new Date().toLocaleTimeString()}] Inserted metrics. Total gen: ${Math.round(outputs.reduce((s,o)=>s+o.output,0))} kW, consumption: ${Math.round(consumption)}`);
         }
       });
     });
